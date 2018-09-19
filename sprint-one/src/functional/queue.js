@@ -3,16 +3,31 @@ var Queue = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
+  var size = 0;
 
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
+    for(var i=size-1; i>=0; i--) {
+      storage[i+1] = storage[i];
+    }
+    storage[0] = value;//adds item to stack (highest number in storage obj)
+    size++;
   };
 
   someInstance.dequeue = function() {
+    if (size === 0) {
+      return undefined;
+    }
+
+      var tmp = storage[size-1];
+      delete storage[size-1];
+      size--;
+      return tmp;
   };
 
   someInstance.size = function() {
+    return size;
   };
 
   return someInstance;
