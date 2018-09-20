@@ -1,5 +1,5 @@
 var Queue = function() {
-  var someInstance = Object.create(Queue.prototype);
+  var someInstance = Object.create(queueMethods);
   someInstance.storage = {};
   someInstance._size = 0;
   
@@ -26,9 +26,6 @@ var Queue = function() {
   },
   size: function(){
     return this._size;
-  },
-
-  constructor: Queue
+  }
  };
 
-Queue.prototype = Object.create(queueMethods);
