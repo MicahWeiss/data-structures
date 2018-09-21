@@ -74,12 +74,22 @@ var treePrototype = {
 
   balanceTree: function() {
     var values = [];
-
     function pushVals(node) {
       values.push(node.value);
     }
     this.depthFirstLog(pushVals);
-    console.log(values);
+    values.sort();
+
+    function recursiveBT(array) {
+      let midpoint = Math.ceil(array.length / 2);
+      this.insert(array[midpoint]);
+      if (array.length > 1) {
+        this.recursiveBT(array.slice(0, midpoint));
+      }
+      if (array.length > 2) {
+        this.recursiveBT(array.slice(midpoint + 1, array.length));
+      }
+    }
   }
 };
 

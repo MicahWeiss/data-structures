@@ -45,11 +45,18 @@ describe("binarySearchTree", function() {
     var func = function(value) {
       array.push(value);
     };
-    binarySearchTree.insert(2);
+    binarySearchTree.insert(6);
     binarySearchTree.insert(7);
-    binarySearchTree.insert(10);
-    binarySearchTree.insert(20);
-    binarySearchTree.balanceTree(func);
-    expect(array).to.eql([2, 7, 10, 20]);
+    binarySearchTree.insert(8);
+    binarySearchTree.insert(9);
+    // binarySearchTree.insert(6);
+    // binarySearchTree.insert(7);
+    // binarySearchTree.insert(8);
+    // binarySearchTree.insert(9);
+    // binarySearchTree.insert(10);
+    binarySearchTree.balanceTree();
+    // expect(array).to.eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    binarySearchTree.depthFirstLog(func);
+    expect(array).to.eql([5, 6, 7, 8, 9]);
   });
 });
