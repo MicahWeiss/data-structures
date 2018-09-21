@@ -73,19 +73,9 @@ var treePrototype = {
   }
 };
 
-//find: function(value) {
-/*return the  that contains the item
-    let currentNode = root
-    if(value < currentNode.val){
-         if(currentNode.left !== undefined){    
-             currentNode = currentNode.left
-         }else{
-             return 
-         }
-    }
-  }
-};
-
 /*
  * Complexity: What is the time complexity of the above functions?
+ * insert = best O(1), worst O(n)
+ * contains = best O(1), worst O(n)
+ * depthFirstLog = best O(n), worst O(n)
  */
