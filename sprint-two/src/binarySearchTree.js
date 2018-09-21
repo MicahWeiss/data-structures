@@ -70,6 +70,16 @@ var treePrototype = {
     }
 
     recursiveDFL(currentNode);
+  },
+
+  balanceTree: function() {
+    var values = [];
+
+    function pushVals(node) {
+      values.push(node.value);
+    }
+    this.depthFirstLog(pushVals);
+    console.log(values);
   }
 };
 
